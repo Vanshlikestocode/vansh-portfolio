@@ -165,7 +165,7 @@ export const experiments: Experiment[] = [
 ];
 
 export const labDomains: { id: LabDomain; blurb: string; projects: string[] }[] = [
-  { id: "AI", blurb: "Agents, LLMs and reasoning over messy input.", projects: ["orbit", "craft", "ai-sre-agent", "finguard", "ai-trip-planner", "ai-resume-analyzer"] },
+  { id: "AI", blurb: "Agents, LLMs and reasoning over messy input.", projects: ["orbit", "craft", "ai-sre-agent", "finguard", "ai-resume-analyzer"] },
   { id: "ML", blurb: "Classifiers, regressions and honest evaluation.", projects: ["smg", "finguard", "air-control", "customer-churn-prediction"] },
   { id: "APIs", blurb: "Typed endpoints that serve models and data.", projects: ["orbit", "smg", "ai-sre-agent"] },
   { id: "UI", blurb: "Interfaces, motion and the details people touch.", projects: ["queueless", "craft", "portfolio-v1"] },

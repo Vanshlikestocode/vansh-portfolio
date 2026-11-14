@@ -83,9 +83,9 @@ export const projects: Project[] = [
     subtitle: "Smart college canteen pre-ordering & queue management",
     category: "Mobile · Full Stack",
     filters: ["mobile", "full-stack"],
-    status: "in-progress",
+    status: "live",
     flagship: true,
-    period: "2026 — ongoing",
+    period: "2026",
     accent: "#ff6b35",
     summary:
       "Order from the classroom, pick a pickup time, walk up when the food is ready. One Flutter + Firebase app for students, counter staff and the canteen admin.",
@@ -108,9 +108,6 @@ export const projects: Project[] = [
       { label: "TV order board on its own read-only login — numbers only", state: "done" },
       { label: "Together: a group chat where friends plan one order", state: "done" },
       { label: "Counter screens in English, Hindi and Marathi", state: "done" },
-      { label: "Online UPI and card payments (Razorpay), tested in test mode", state: "building" },
-      { label: "Order alerts while the app is closed", state: "planned" },
-      { label: "App Store and Google Play listings", state: "planned" },
     ],
     technologies: [
       "Flutter",
@@ -119,7 +116,6 @@ export const projects: Project[] = [
       "Firestore",
       "Firebase Auth",
       "Cloud Functions",
-      "Razorpay",
       "GitHub Actions",
     ],
     details: [
@@ -143,7 +139,6 @@ export const projects: Project[] = [
       { label: "Auth", detail: "Firebase Auth · App Check" },
       { label: "Rules", detail: "1,550 lines · server-side checks" },
       { label: "Database", detail: "Cloud Firestore" },
-      { label: "Payments", detail: "Razorpay · Cloud Functions", planned: true },
     ],
     links: {
       demo: "https://queueless-1be80.web.app",
@@ -223,9 +218,9 @@ export const projects: Project[] = [
     subtitle: "AI-powered incident analysis & root-cause assistant",
     category: "AI Agents · Infrastructure",
     filters: ["ai-ml", "full-stack"],
-    status: "in-progress",
+    status: "built",
     flagship: true,
-    period: "Jun 2026 — ongoing",
+    period: "Jun 2026",
     accent: "#f5b83d",
     summary:
       "Upload a log, get an incident report: severity, probable root cause and next steps from a local Llama 3.",
@@ -234,20 +229,13 @@ export const projects: Project[] = [
     problem:
       "When something breaks, the first minutes of an incident disappear into scrolling logs and guessing which error matters. The signal is there; it is just buried.",
     solution:
-      "A FastAPI backend with an /analyze-log endpoint that accepts a log upload, parses it and prompts Llama 3 (LangChain + Ollama, temperature 0) to reason like a senior SRE. A rule-based analyzer came first as a baseline; the LLM path replaced it. The next stage turns it into an agent that watches metrics and opens issues.",
+      "A FastAPI backend with an /analyze-log endpoint that accepts a log upload, parses it and prompts Llama 3 (LangChain + Ollama, temperature 0) to reason like a senior SRE. A rule-based analyzer came first as a baseline; the LLM path replaced it.",
     features: [
       { label: "FastAPI service", state: "done" },
       { label: "Log upload + parser", state: "done" },
       { label: "POST /analyze-log endpoint", state: "done" },
       { label: "Llama 3 via Ollama + LangChain, temperature 0", state: "done" },
       { label: "AI-generated incident reports", state: "done" },
-      { label: "Prometheus metrics + incident detection", state: "planned" },
-      { label: "Grafana dashboards", state: "planned" },
-      { label: "LangGraph multi-step root-cause agent", state: "planned" },
-      { label: "PostgreSQL incident history", state: "planned" },
-      { label: "Docker packaging", state: "planned" },
-      { label: "Automated GitHub issue creation", state: "planned" },
-      { label: "Safe, approval-gated remediation workflows", state: "planned" },
     ],
     technologies: [
       "Python",
@@ -256,18 +244,12 @@ export const projects: Project[] = [
       "Llama",
       "LangChain",
       "Uvicorn",
-      "LangGraph",
-      "Prometheus",
-      "Grafana",
-      "Docker",
-      "PostgreSQL",
     ],
     details: [
       "The model is served locally by Ollama, so logs are analysed on the machine instead of being sent to a hosted API.",
       "Temperature 0 keeps reports repeatable: the same log produces the same analysis.",
       "Uploaded logs are written to a temporary file, parsed and deleted in a finally block.",
       "The prompt asks for three things only — severity, root cause, recommended actions — which keeps reports short enough to act on.",
-      "LangGraph, Prometheus, Grafana, PostgreSQL and Docker are the planned next stage, not part of the current build.",
     ],
     architecture: [
       { label: "Logs", detail: "Upload · .log file" },
@@ -275,7 +257,6 @@ export const projects: Project[] = [
       { label: "Parser", detail: "Line extraction" },
       { label: "LLM", detail: "Llama 3 · Ollama" },
       { label: "Report", detail: "Severity · cause · actions" },
-      { label: "Action", detail: "GitHub issue · remediation", planned: true },
     ],
     links: {},
     preview: "sre",
@@ -586,46 +567,6 @@ export const projects: Project[] = [
     ],
     links: {},
     preview: "resume",
-  },
-  {
-    slug: "ai-trip-planner",
-    name: "AI Trip Planner",
-    subtitle: "Travel requirements in, structured itinerary out",
-    category: "AI / Product",
-    filters: ["ai-ml", "full-stack"],
-    status: "in-progress",
-    period: "May 2026 — ongoing",
-    accent: "#4fd1c5",
-    summary:
-      "A Next.js app that turns a destination, dates and preferences into a day-by-day itinerary with an LLM.",
-    description:
-      "An AI-powered travel planner that takes a destination, trip length and preferences and turns them into a structured, day-by-day itinerary.",
-    problem:
-      "Planning a trip means juggling dozens of tabs — places, timings, budgets — and stitching them into a plan by hand.",
-    solution:
-      "A Next.js + TypeScript app with a validated input form (React Hook Form + Zod), the OpenAI API for itinerary generation and Prisma on PostgreSQL for saved trips. The app foundation and data layer are built; the itinerary flow comes next.",
-    features: [
-      { label: "Next.js app foundation and UI components", state: "done" },
-      { label: "Prisma + PostgreSQL data layer", state: "done" },
-      { label: "Typed trip-requirements form (Zod)", state: "building" },
-      { label: "LLM itinerary generation", state: "building" },
-      { label: "Saved trips", state: "planned" },
-    ],
-    technologies: ["Next.js", "TypeScript", "OpenAI APIs", "Prisma", "PostgreSQL", "Zod", "Tailwind CSS"],
-    details: [
-      "Requirements are validated with Zod before they reach the model, so the prompt always receives a complete, typed request.",
-      "The model is asked for structured output — days, time blocks, places — that the UI can render as an itinerary rather than a wall of text.",
-      "Trips are modelled in Prisma on PostgreSQL so plans can be saved and revisited.",
-    ],
-    architecture: [
-      { label: "Destination", detail: "Where · when · how long" },
-      { label: "Preferences", detail: "Pace · budget · interests" },
-      { label: "AI planning", detail: "OpenAI API · structured output" },
-      { label: "Itinerary", detail: "Day-by-day plan" },
-      { label: "Trip", detail: "Saved · Prisma / Postgres", planned: true },
-    ],
-    links: {},
-    preview: "trip",
   },
   {
     slug: "customer-churn-prediction",

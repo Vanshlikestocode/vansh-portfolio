@@ -49,7 +49,7 @@ export const journey: JourneyStep[] = [
   {
     date: "Jun 2026",
     title: "AI-SRE Agent",
-    body: "Started building for engineers: local LLM reasoning over production logs, heading towards an agent that watches metrics and opens issues.",
+    body: "Built for engineers: an incident-analysis assistant that reads production logs with a local LLM and reports severity, root cause and next steps.",
     tags: ["Llama 3", "Ollama", "LangChain"],
     project: "ai-sre-agent",
   },

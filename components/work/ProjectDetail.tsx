@@ -117,13 +117,17 @@ export function ProjectDetail({ project, variant }: { project: Project; variant:
               </Reveal>
             ))}
           </ul>
-          <p className="label mt-5 flex flex-wrap gap-5 text-faint">
-            {(Object.keys(stateIcon) as FeatureState[]).map((s) => (
-              <span key={s} className="flex items-center gap-2">
-                {stateIcon[s]} {stateLabel[s]}
-              </span>
-            ))}
-          </p>
+          {new Set(project.features.map((f) => f.state)).size > 1 && (
+            <p className="label mt-5 flex flex-wrap gap-5 text-faint">
+              {(Object.keys(stateIcon) as FeatureState[])
+                .filter((s) => project.features.some((f) => f.state === s))
+                .map((s) => (
+                  <span key={s} className="flex items-center gap-2">
+                    {stateIcon[s]} {stateLabel[s]}
+                  </span>
+                ))}
+            </p>
+          )}
         </Block>
 
         <Block label="Technology">

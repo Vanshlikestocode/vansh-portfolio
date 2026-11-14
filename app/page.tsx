@@ -2,7 +2,6 @@ import { Hero } from "@/components/hero/Hero";
 import { Lab } from "@/components/lab/Lab";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
-import { CurrentlyBuilding } from "@/components/sections/CurrentlyBuilding";
 import { GitHub } from "@/components/sections/GitHub";
 import { HowIBuild } from "@/components/sections/HowIBuild";
 import { Intro } from "@/components/sections/Intro";
@@ -29,7 +28,6 @@ export default function Home() {
       <Stack />
       <Journey />
       <GitHub />
-      <CurrentlyBuilding />
       <Lab />
       <About />
       <Contact />

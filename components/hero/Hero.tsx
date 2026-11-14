@@ -74,11 +74,13 @@ export function Hero() {
           </span>
           Scroll
         </div>
-        <div className="label hidden items-center gap-3 text-mute sm:flex">
-          <span className="pulse-dot relative inline-flex size-1.5 rounded-full bg-warn text-warn" />
-          Now building
-          <span className="text-paper">{building.map((p) => p.name).join(" · ")}</span>
-        </div>
+        {building.length > 0 && (
+          <div className="label hidden items-center gap-3 text-mute sm:flex">
+            <span className="pulse-dot relative inline-flex size-1.5 rounded-full bg-warn text-warn" />
+            Now building
+            <span className="text-paper">{building.map((p) => p.name).join(" · ")}</span>
+          </div>
+        )}
       </div>
     </section>
   );
