@@ -150,5 +150,77 @@ export function ProjectGlyph({ kind, accent }: { kind: PreviewKind; accent: stri
           </g>
         </svg>
       );
+    case "orbit":
+      return (
+        <svg viewBox="0 0 200 110" className="h-full w-full" aria-hidden="true">
+          <ellipse cx="100" cy="55" rx="70" ry="30" fill="none" stroke="rgba(236,235,230,0.18)" />
+          <ellipse cx="100" cy="55" rx="44" ry="19" fill="none" stroke="rgba(236,235,230,0.12)" strokeDasharray="3 4" />
+          <circle cx="100" cy="55" r="9" fill={accent} fillOpacity="0.85" />
+          <circle cx="100" cy="55" r="15" fill="none" stroke={accent} strokeOpacity="0.4" className="origin-center scale-75 opacity-0 transition-all duration-700 group-hover:scale-100 group-hover:opacity-100" style={{ transformBox: "fill-box" }} />
+          <g className="origin-[100px_55px] transition-transform duration-[1.4s] group-hover:rotate-[160deg]" style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}>
+            {[[30, 55], [170, 55], [100, 25]].map(([x, y], i) => (
+              <g key={i}>
+                <circle cx={x} cy={y} r="4.5" fill="#ff5a4e" />
+                <circle cx={x} cy={y} r="4.5" fill="#3ddc97" className="opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ transitionDelay: `${500 + i * 150}ms` }} />
+              </g>
+            ))}
+          </g>
+        </svg>
+      );
+    case "craft":
+      return (
+        <svg viewBox="0 0 200 110" className="h-full w-full" aria-hidden="true">
+          {[18, 34, 52, 70, 86, 70, 52, 34, 18].map((h, i) => (
+            <rect
+              key={i}
+              x={52 + i * 11}
+              y={55 - h / 2}
+              width="6"
+              height={h}
+              rx="3"
+              fill={accent}
+              fillOpacity={0.35 + (i % 3) * 0.2}
+              className="origin-center scale-y-[0.15] transition-transform duration-500 group-hover:scale-y-100"
+              style={{ transformBox: "fill-box", transitionDelay: `${Math.abs(4 - i) * 70}ms` }}
+            />
+          ))}
+          <text x="100" y="104" textAnchor="middle" fontSize="7" fill="rgba(236,235,230,0.45)" fontFamily="monospace">HEY CRAFT</text>
+        </svg>
+      );
+    case "aircontrol":
+      return (
+        <svg viewBox="0 0 200 110" className="h-full w-full" aria-hidden="true">
+          <rect x="40" y="14" width="120" height="76" rx="6" fill="none" stroke="rgba(236,235,230,0.2)" />
+          <circle cx="100" cy="52" r="5" fill={accent} className="transition-transform duration-700 [transform:translateX(-26px)] group-hover:[transform:translateX(-4px)]" style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }} />
+          <circle cx="100" cy="52" r="5" fill={accent} className="transition-transform duration-700 [transform:translateX(26px)] group-hover:[transform:translateX(4px)]" style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }} />
+          <circle cx="100" cy="52" r="16" fill="none" stroke={accent} strokeOpacity="0.6" className="origin-center scale-50 opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100" style={{ transformBox: "fill-box", transitionDelay: "450ms" }} />
+          <text x="100" y="104" textAnchor="middle" fontSize="7" fill="rgba(236,235,230,0.45)" fontFamily="monospace">PINCH · CLICK</text>
+        </svg>
+      );
+    case "algoguard":
+      return (
+        <svg viewBox="0 0 200 110" className="h-full w-full" aria-hidden="true">
+          <line x1="24" y1="78" x2="180" y2="78" stroke="#ff5a4e" strokeOpacity="0.7" strokeDasharray="4 4" />
+          <text x="180" y="90" textAnchor="end" fontSize="7" fill="rgba(255,90,78,0.8)" fontFamily="monospace">STOP</text>
+          <path d="M24 60 L48 44 L66 52 L88 30 L108 42 L126 70 L140 78 L158 78 L180 78" fill="none" stroke="rgba(236,235,230,0.15)" strokeWidth="2" />
+          <path d="M24 60 L48 44 L66 52 L88 30 L108 42 L126 70 L140 78 L158 78 L180 78" fill="none" stroke={accent} strokeWidth="2" pathLength="100" strokeDasharray="100" className="[stroke-dashoffset:100] transition-[stroke-dashoffset] duration-[1.2s] group-hover:[stroke-dashoffset:0]" style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }} />
+          <circle cx="140" cy="78" r="5" fill="none" stroke={accent} strokeWidth="2" className="opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ transitionDelay: "900ms" }} />
+        </svg>
+      );
+    case "finguard":
+      return (
+        <svg viewBox="0 0 200 110" className="h-full w-full" aria-hidden="true">
+          <rect x="40" y="14" width="120" height="70" rx="6" fill="rgba(236,235,230,0.04)" stroke="rgba(236,235,230,0.2)" />
+          {[[52, 28, 70], [52, 42, 92], [52, 56, 60], [52, 70, 80]].map(([x, y, w], i) => (
+            <rect key={i} x={x} y={y} width={w} height="5" rx="2.5" fill={i === 1 ? accent : "rgba(236,235,230,0.25)"} fillOpacity={i === 1 ? 0.25 : 1} className={i === 1 ? "transition-[fill-opacity] duration-500 group-hover:[fill-opacity:0.9]" : undefined} />
+          ))}
+          {["FRAUD", "HIGH", "CARDS"].map((t, i) => (
+            <g key={t} className="translate-y-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100" style={{ transitionDelay: `${300 + i * 120}ms` }}>
+              <rect x={46 + i * 38} y="90" width="34" height="13" rx="6.5" fill={i === 0 ? "#ff5a4e" : accent} fillOpacity="0.85" />
+              <text x={63 + i * 38} y="99" textAnchor="middle" fontSize="6.5" fill="#08080a" fontFamily="monospace">{t}</text>
+            </g>
+          ))}
+        </svg>
+      );
   }
 }

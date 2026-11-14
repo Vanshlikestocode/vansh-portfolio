@@ -21,7 +21,12 @@ export type PreviewKind =
   | "churn"
   | "student"
   | "sales"
-  | "portfolio";
+  | "portfolio"
+  | "orbit"
+  | "craft"
+  | "aircontrol"
+  | "algoguard"
+  | "finguard";
 
 export type FeatureState = "done" | "building" | "planned";
 
@@ -326,6 +331,7 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/Vanshlikestocode/orbit",
     },
+    preview: "orbit",
   },
   {
     slug: "craft",
@@ -372,6 +378,7 @@ export const projects: Project[] = [
       { label: "Reply", detail: "Spoken answer · Buddy" },
     ],
     links: {},
+    preview: "craft",
   },
   {
     slug: "air-control",
@@ -421,6 +428,7 @@ export const projects: Project[] = [
       { label: "Action", detail: "Shortcut · app · script · air mouse" },
     ],
     links: {},
+    preview: "aircontrol",
   },
   {
     slug: "algoguard",
@@ -476,6 +484,7 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/Vanshlikestocode/algoguard",
     },
+    preview: "algoguard",
   },
   {
     slug: "finguard",
@@ -527,6 +536,7 @@ export const projects: Project[] = [
       { label: "Triage", detail: "Type · fraud · urgency" },
     ],
     links: {},
+    preview: "finguard",
   },
   {
     slug: "ai-resume-analyzer",
