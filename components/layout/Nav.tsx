@@ -18,12 +18,22 @@ export function Nav() {
   const { scrollY, scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 200, damping: 30, restDelta: 0.001 });
 
-  // Compact after the first scroll; tuck away while reading downwards, return on any upward scroll.
+  // Compact after the first scroll; stay tucked away while reading downwards (any speed),
+  // and only return after a deliberate upward scroll, so trackpad jitter doesn't flash it.
+  const upTravel = useRef(0);
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
     setScrolled(y > 40);
-    setHidden(y > 640 && y > prev + 4);
-    if (y < prev - 4) setHidden(false);
+    if (y < 640) {
+      upTravel.current = 0;
+      setHidden(false);
+    } else if (y > prev) {
+      upTravel.current = 0;
+      setHidden(true);
+    } else if (y < prev) {
+      upTravel.current += prev - y;
+      if (upTravel.current > 80) setHidden(false);
+    }
   });
 
   useEffect(() => {
