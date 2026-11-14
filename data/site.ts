@@ -31,7 +31,7 @@ export const site = {
   education: {
     degree: "B.Tech — Artificial Intelligence",
     school: "NMIMS Mukesh Patel School of Technology Management & Engineering",
-    period: "2023 — 2027 (expected)",
+    period: "Expected 2028",
   },
   certification: {
     name: "CS50: Introduction to Computer Science",

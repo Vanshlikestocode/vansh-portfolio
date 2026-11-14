@@ -91,8 +91,8 @@ export const journey: JourneyStep[] = [
   {
     date: "Next",
     title: "Future products",
-    body: "Agents that act safely, ML that ships behind real interfaces, and products that remove a queue somewhere. Graduating 2027.",
-    tags: ["Agents", "Products", "2027"],
+    body: "Agents that act safely, ML that ships behind real interfaces, and products that remove a queue somewhere. Graduating 2028.",
+    tags: ["Agents", "Products", "2028"],
     future: true,
   },
 ];
