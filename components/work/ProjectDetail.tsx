@@ -16,7 +16,7 @@ const stateIcon: Record<FeatureState, React.ReactNode> = {
   building: <Circle className="size-3.5 text-warn" />,
   planned: <CircleDashed className="size-3.5 text-faint" />,
 };
-const stateLabel: Record<FeatureState, string> = { done: "Built", building: "In progress", planned: "Planned" };
+const stateLabel: Record<FeatureState, string> = { done: "Built", building: "Building", planned: "Planned" };
 
 /** The case study body, shared by the modal and the /work/[slug] page. */
 export function ProjectDetail({ project, variant }: { project: Project; variant: "modal" | "page" }) {
@@ -47,18 +47,20 @@ export function ProjectDetail({ project, variant }: { project: Project; variant:
         <Links project={project} className="mt-8" />
       </header>
 
-      <div className="relative mt-12 px-3 sm:px-10 lg:px-16">
-        <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden rounded-3xl border border-line bg-ink p-4 py-10 sm:p-10">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0"
-            style={{ background: `radial-gradient(50% 70% at 50% 100%, color-mix(in oklab, ${project.accent} 16%, transparent), transparent)` }}
-          />
-          <div className="relative w-full max-w-4xl">
-            <Preview kind={project.preview} active />
+      {project.preview && (
+        <div className="relative mt-12 px-3 sm:px-10 lg:px-16">
+          <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden rounded-3xl border border-line bg-ink p-4 py-10 sm:p-10">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0"
+              style={{ background: `radial-gradient(50% 70% at 50% 100%, color-mix(in oklab, ${project.accent} 16%, transparent), transparent)` }}
+            />
+            <div className="relative w-full max-w-4xl">
+              <Preview kind={project.preview} active />
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="relative space-y-20 px-5 py-20 sm:px-10 lg:px-16">
         <Block label="Overview">
@@ -159,7 +161,7 @@ export function ProjectDetail({ project, variant }: { project: Project; variant:
         <footer className="flex flex-col gap-8 border-t border-line pt-10 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="label text-mute">Links</p>
-            <Links project={project} className="mt-4" emptyText="Source isn’t public yet." />
+            <Links project={project} className="mt-4" emptyText="Source is private. Code walkthrough on request." />
           </div>
           {variant === "modal" ? (
             <button
@@ -202,7 +204,7 @@ function Block({ label, children }: { label: string; children: React.ReactNode }
 
 function Links({ project, className, emptyText }: { project: Project; className?: string; emptyText?: string }) {
   const items = [
-    project.links.demo && { label: project.preview === "queueless" ? "Live web app" : "Live demo", href: project.links.demo, primary: true },
+    project.links.demo && { label: project.preview === "queueless" ? "Live web app" : "Live app", href: project.links.demo, primary: true },
     project.links.github && { label: "GitHub", href: project.links.github, primary: false },
     ...(project.links.extra ?? []).map((e) => ({ ...e, primary: false })),
   ].filter(Boolean) as { label: string; href: string; primary: boolean }[];

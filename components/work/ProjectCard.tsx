@@ -60,7 +60,7 @@ export function ProjectCard({ project }: { project: Project }) {
             style={{ background: `radial-gradient(60% 80% at 50% 100%, color-mix(in oklab, ${project.accent} 22%, transparent), transparent)` }}
           />
           <div className="relative h-full w-full p-3 transition-transform duration-700 ease-[cubic-bezier(.16,1,.3,1)] group-hover:-translate-y-1 group-hover:scale-[1.04]">
-            <ProjectGlyph kind={project.preview} accent={project.accent} />
+            {project.preview && <ProjectGlyph kind={project.preview} accent={project.accent} />}
           </div>
         </div>
 

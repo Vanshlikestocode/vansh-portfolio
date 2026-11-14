@@ -175,7 +175,7 @@ function MenuScreen({ phase }: { phase: number }) {
       </div>
       <p className="mt-4 text-[22px] font-semibold leading-tight tracking-tight">What&apos;s for lunch?</p>
       <div className="mt-3 flex h-9 items-center gap-2 rounded-xl bg-white/[0.07] px-3 text-[11px] text-white/45">
-        <Search className="size-3.5" /> Search 249 dishes
+        <Search className="size-3.5" /> Search 284 dishes
       </div>
       <div className="no-scrollbar mt-3 flex gap-1.5 overflow-hidden">
         {["All", "South Indian", "Franky", "Chaat", "Beverages"].map((c, i) => (

@@ -39,7 +39,7 @@ export function SmgPreview({ active }: { active: boolean }) {
     <div
       className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#07110d] p-4 font-mono text-[11px] text-[#cfe9dc] sm:p-5"
       role="img"
-      aria-label={`Demo of the SMG pipeline: a simulated ${tx.amount} transaction scored at ${tx.p}% fraud probability, ${tx.risk.toLowerCase()} risk.`}
+      aria-label={`Illustration of the SMG pipeline: a simulated ${tx.amount} transaction scored at ${tx.p}% fraud probability, ${tx.risk.toLowerCase()} risk.`}
     >
       <div
         aria-hidden="true"
@@ -49,7 +49,7 @@ export function SmgPreview({ active }: { active: boolean }) {
       <div className="relative flex items-center justify-between gap-3">
         <span className="tracking-[0.18em] text-[#3ddc97]">SMG · RISK ENGINE</span>
         <span className="rounded-full border border-[#f5b83d]/40 bg-[#f5b83d]/10 px-2.5 py-1 text-[10px] tracking-[0.14em] text-[#f5b83d]">
-          DEMO · SIMULATED DATA
+          SIMULATED DATA
         </span>
       </div>
 

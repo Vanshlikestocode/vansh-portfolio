@@ -28,7 +28,7 @@ const stages = [
   {
     n: "04",
     title: "Ship the product",
-    body: "Deploy it, put it in front of people, watch what happens, iterate. A demo proves an idea; a shipped product proves the engineering.",
+    body: "Deploy it, put it in front of people, watch what happens, iterate. An idea proves nothing on its own; a shipped product proves the engineering.",
     Visual: ShipVisual,
   },
 ];
@@ -49,7 +49,7 @@ export function HowIBuild() {
               How I <span className="serif-accent text-signal">build</span>
             </Fragment>,
           ]}
-          intro="Not demos — working products. Every project goes through the same four stages, and the third one is the one most people skip."
+          intro="Working products, end to end. Every project goes through the same four stages, and the third one is the one most people skip."
         />
 
         <div ref={ref} className="relative mt-16 md:mt-24">

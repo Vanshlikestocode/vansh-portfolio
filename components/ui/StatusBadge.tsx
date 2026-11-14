@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 const config: Record<ProjectStatus, { label: string; color: string }> = {
   live: { label: "Live", color: "text-live" },
   built: { label: "Built", color: "text-paper-dim" },
-  "in-progress": { label: "In progress", color: "text-warn" },
+  "in-progress": { label: "Building", color: "text-warn" },
   experiment: { label: "Experiment", color: "text-mute" },
 };
 
@@ -21,7 +21,7 @@ function Glyph({ status }: { status: ProjectStatus }) {
   return <span className="inline-block size-2 rounded-full border border-current" />;
 }
 
-/** ● LIVE · ● BUILT · ◐ IN PROGRESS · ○ EXPERIMENT */
+/** ● LIVE · ● BUILT · ◐ BUILDING · ○ EXPERIMENT */
 export function StatusBadge({ status, className }: { status: ProjectStatus; className?: string }) {
   const c = config[status];
   return (

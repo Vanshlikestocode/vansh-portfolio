@@ -213,7 +213,7 @@ function FeaturedProject({
                   data-cursor="link"
                   className="inline-flex h-11 items-center gap-2 rounded-full border border-line-2 px-5 text-sm text-paper transition-colors hover:border-paper/40"
                 >
-                  Live {project.preview === "queueless" ? "web app" : "demo"} <ArrowUpRight className="size-4" />
+                  Live {project.preview === "queueless" ? "web app" : "app"} <ArrowUpRight className="size-4" />
                 </a>
               )}
               {project.links.github && (
@@ -233,7 +233,7 @@ function FeaturedProject({
           <div className={cn("relative [perspective:1400px]", reversed && "lg:order-1")}>
             <motion.div style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }} className="relative">
               <div className={cn(isPhone && "pb-8")}>
-                <Preview kind={project.preview} active={active} />
+                {project.preview && <Preview kind={project.preview} active={active} />}
               </div>
               {isPhone && fine && (
                 <p className="label pointer-events-none absolute inset-x-0 -bottom-1 text-center text-faint transition-opacity duration-500 group-hover:opacity-0">

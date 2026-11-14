@@ -91,7 +91,7 @@ export function Lab() {
               </span>
             </h2>
             <Reveal delay={0.1} className="max-w-md text-lg text-mute">
-              Coursework apps, early ML repos, prototypes and tooling — the smaller builds where most of the learning
+              Coursework apps, early ML repos, side builds and tooling — the smaller builds where most of the learning
               happens. Open a module.
             </Reveal>
           </div>

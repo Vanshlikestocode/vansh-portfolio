@@ -117,8 +117,8 @@ export function ChurnPreview({ interactive = true }: { active?: boolean; interac
         </div>
       </div>
       <p className="mt-4 text-[9px] leading-relaxed text-[#f3dfe3]/40">
-        Toy logistic function for exploring how inputs move risk — not the trained model (reported ~72% accuracy on
-        its own dataset).
+        Illustrative logistic function for exploring how inputs move risk, separate from the trained model (reported
+        ~72% accuracy on its own dataset).
       </p>
     </div>
   );

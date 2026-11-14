@@ -58,7 +58,7 @@ export function Intro() {
           <Reveal className="space-y-6 text-lg leading-relaxed text-mute sm:text-xl">
             <p>
               If the answer is yes, I build it — the model, the API, the database and the interface people actually
-              touch. I care about the whole path from idea to working product, not just the part that demos well.
+              touch. I care about the whole path from idea to working product, not just the part that looks good in a screenshot.
             </p>
             <p>
               That&apos;s why my work spans <span className="text-paper">AI</span>,{" "}

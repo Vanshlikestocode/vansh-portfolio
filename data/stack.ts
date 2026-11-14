@@ -27,6 +27,7 @@ export const stack: Tech[] = [
   { name: "TypeScript", group: "Languages", reveals: ["Typed React", "Next.js apps", "Safer refactors"] },
   { name: "SQL", group: "Languages", reveals: ["Queries", "Schema design", "Analytics"], aliases: ["SQLite", "PostgreSQL"] },
   { name: "Dart", group: "Languages", reveals: ["Flutter apps", "Async streams", "State management"] },
+  { name: "Swift", group: "Languages", reveals: ["Native macOS apps", "SwiftUI", "On-device AI"], aliases: ["SwiftUI"] },
 
   { name: "scikit-learn", group: "AI / ML", reveals: ["Machine learning", "Classification", "Prediction", "Evaluation"] },
   { name: "Pandas", group: "AI / ML", reveals: ["Data cleaning", "EDA", "Feature engineering"] },
@@ -34,8 +35,13 @@ export const stack: Tech[] = [
   { name: "Ollama", group: "AI / ML", reveals: ["Local LLM serving", "Private inference"] },
   { name: "Llama", group: "AI / ML", reveals: ["Open-weight LLMs", "Incident reasoning", "Llama 3"] },
   { name: "OpenAI APIs", group: "AI / ML", reveals: ["LLM apps", "Structured output", "Prompt design"] },
+  { name: "Claude API", group: "AI / ML", reveals: ["Tool use", "Agent loops", "Multi-step tasks"] },
+  { name: "PyTorch", group: "AI / ML", reveals: ["Neural networks", "CNNs and LSTMs", "Quantization"] },
+  { name: "Hugging Face", group: "AI / ML", reveals: ["BERT fine-tuning", "Knowledge distillation", "Datasets"] },
+  { name: "Apple Vision", group: "AI / ML", reveals: ["Hand-pose tracking", "On-device inference"] },
 
   { name: "FastAPI", group: "Backend & Data", reveals: ["Backend APIs", "REST", "Python", "ML serving"] },
+  { name: "SQLAlchemy", group: "Backend & Data", reveals: ["ORM models", "Alembic migrations", "SQLite to Postgres"], aliases: ["Alembic"] },
   { name: "Firebase", group: "Backend & Data", reveals: ["Auth", "Hosting", "Cloud Functions", "Messaging"], aliases: ["Firebase Auth", "Cloud Functions", "FCM"] },
   { name: "Firestore", group: "Backend & Data", reveals: ["Realtime data", "Security rules", "Transactions"] },
   { name: "Supabase", group: "Backend & Data", reveals: ["Postgres", "Auth", "Server-side sessions"] },
@@ -44,6 +50,7 @@ export const stack: Tech[] = [
 
   { name: "Next.js", group: "Frontend", reveals: ["App Router", "Static + server rendering", "Full-stack React"] },
   { name: "React", group: "Frontend", reveals: ["Component systems", "Hooks", "Interactive UI"], aliases: ["Next.js"] },
+  { name: "Streamlit", group: "Frontend", reveals: ["Data dashboards", "Interactive research tools"] },
 
   { name: "Flutter", group: "Mobile", reveals: ["Mobile apps", "Dart", "Cross-platform", "Web (WASM)"] },
   { name: "Android Studio", group: "Mobile", reveals: ["Native Android", "Java", "SQLite"] },

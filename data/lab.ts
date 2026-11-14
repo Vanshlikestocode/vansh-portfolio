@@ -1,5 +1,5 @@
 /**
- * Smaller builds: coursework apps, early ML repos, prototypes and tooling.
+ * Smaller builds: coursework apps, early ML repos, side builds and tooling.
  * Each one exists in a repository or project folder — nothing here is a
  * placeholder. Dates come from commit history or project files.
  */
@@ -17,6 +17,15 @@ export interface Experiment {
 }
 
 export const experiments: Experiment[] = [
+  {
+    slug: "convert",
+    name: "Convert",
+    domains: ["UI", "Automation"],
+    summary:
+      "macOS drag-to-convert wheel: start dragging a PDF, document or image and drop it on DOCX, PDF, Compress, Crop or Redact. Built on Apple frameworks, about 1 MB, and files never leave the Mac.",
+    tech: ["Swift", "SwiftUI", "PDFKit"],
+    date: "Oct 2026",
+  },
   {
     slug: "safewalk",
     name: "SafeWalk",
@@ -86,8 +95,8 @@ export const experiments: Experiment[] = [
     date: "Oct 2026",
   },
   {
-    slug: "queueless-web-prototype",
-    name: "QueueLess Web Prototype",
+    slug: "queueless-web-v1",
+    name: "QueueLess Web v1",
     domains: ["UI", "APIs"],
     summary:
       "The first take on QueueLess: Next.js with Supabase auth, server-side sessions and middleware-protected dashboard routes.",
@@ -109,7 +118,7 @@ export const experiments: Experiment[] = [
     name: "AI Health Assistant",
     domains: ["AI"],
     summary:
-      "Rule-based symptom-triage agent prototype, added to my fork of the 500-AI-Agents-Projects collection.",
+      "Rule-based symptom-triage agent, added to my fork of the 500-AI-Agents-Projects collection.",
     tech: ["Python"],
     date: "Dec 2025",
     link: "https://github.com/Vanshlikestocode/500-AI-Agents-Projects/tree/main/projects/ai-health-assistant",
@@ -156,17 +165,28 @@ export const experiments: Experiment[] = [
 ];
 
 export const labDomains: { id: LabDomain; blurb: string; projects: string[] }[] = [
-  { id: "AI", blurb: "Agents, LLMs and reasoning over messy input.", projects: ["ai-sre-agent", "ai-trip-planner", "ai-resume-analyzer"] },
-  { id: "ML", blurb: "Classifiers, regressions and honest evaluation.", projects: ["smg", "customer-churn-prediction"] },
-  { id: "APIs", blurb: "Typed endpoints that serve models and data.", projects: ["smg", "ai-sre-agent"] },
-  { id: "UI", blurb: "Interfaces, motion and the details people touch.", projects: ["queueless", "portfolio-v1"] },
+  { id: "AI", blurb: "Agents, LLMs and reasoning over messy input.", projects: ["orbit", "craft", "ai-sre-agent", "finguard", "ai-trip-planner", "ai-resume-analyzer"] },
+  { id: "ML", blurb: "Classifiers, regressions and honest evaluation.", projects: ["smg", "finguard", "air-control", "customer-churn-prediction"] },
+  { id: "APIs", blurb: "Typed endpoints that serve models and data.", projects: ["orbit", "smg", "ai-sre-agent"] },
+  { id: "UI", blurb: "Interfaces, motion and the details people touch.", projects: ["queueless", "craft", "portfolio-v1"] },
   { id: "Mobile", blurb: "Android in Java, cross-platform in Flutter.", projects: ["queueless"] },
-  { id: "Automation", blurb: "Scripts that do the boring parts reliably.", projects: [] },
-  { id: "Data", blurb: "Cleaning, exploring and explaining datasets.", projects: ["student-performance-analysis", "sales-data-dashboard"] },
+  { id: "Automation", blurb: "Scripts that do the boring parts reliably.", projects: ["craft", "air-control"] },
+  { id: "Data", blurb: "Cleaning, exploring and explaining datasets.", projects: ["algoguard", "student-performance-analysis", "sales-data-dashboard"] },
 ];
 
 /** A dated changelog assembled from commit history and project files. */
 export const buildLog: { date: string; project: string; entry: string }[] = [
+  { date: "2026-11-10", project: "QueueLess", entry: "Showcase published with an 86-second video tour" },
+  { date: "2026-11-02", project: "ORBIT", entry: "24 scenarios, 9 attacks, 11 metrics and a reliability score for AI agents" },
+  { date: "2026-10-29", project: "FinGuard", entry: "Six model families compared on accuracy and CodeCarbon energy" },
+  { date: "2026-10-28", project: "Craft", entry: "“Hey Craft” voice assistant on Apple's on-device model" },
+  { date: "2026-10-28", project: "Air Control", entry: "Hand signs, two-hand gestures, per-app profiles and an air mouse" },
+  { date: "2026-10-28", project: "Convert", entry: "Drag-to-convert wheel for PDFs, documents and images" },
+  { date: "2026-10-26", project: "AlgoGuard", entry: "Volatility-aware NIFTY 50 stock selection study" },
+  { date: "2026-10-22", project: "AlgoGuard", entry: "Walk-forward test and an explain-a-day tab" },
+  { date: "2026-10-21", project: "QueueLess", entry: "Rush hour: slot capacity, start-at times and one pass for every counter" },
+  { date: "2026-10-20", project: "QueueLess", entry: "Sales report with Close the day for the cashier" },
+  { date: "2026-10-17", project: "AlgoGuard", entry: "Engine, six-guardrail risk layer and backtests on NSE data" },
   { date: "2026-10-02", project: "QueueLess", entry: "Web build compiled to WebAssembly and deployed to Firebase Hosting" },
   { date: "2026-10-02", project: "QueueLess", entry: "Dark mode with a circular theme reveal; phone, tablet and desktop layouts" },
   { date: "2026-10-02", project: "QueueLess", entry: "Production menu seeded — 249 dishes across 17 categories" },
@@ -178,7 +198,7 @@ export const buildLog: { date: string; project: string; entry: string }[] = [
   { date: "2026-06-02", project: "AI-SRE Agent", entry: "Llama 3 analyzer through Ollama and LangChain" },
   { date: "2026-06-01", project: "AI-SRE Agent", entry: "FastAPI service, log parser and rule-based baseline" },
   { date: "2026-05-26", project: "AI Trip Planner", entry: "Next.js + Prisma + OpenAI foundation" },
-  { date: "2026-01-22", project: "QueueLess", entry: "Web prototype with Next.js and Supabase auth" },
+  { date: "2026-01-22", project: "QueueLess", entry: "First web version with Next.js and Supabase auth" },
   { date: "2025-12-20", project: "Open source", entry: "AI Health Assistant added to my 500-AI-Agents-Projects fork" },
   { date: "2025-12-19", project: "ML", entry: "Fraud-detection and credit-scoring models published" },
   { date: "2025-12-18", project: "Data", entry: "FinTech EDA and student score predictor published" },
